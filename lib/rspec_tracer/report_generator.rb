@@ -141,7 +141,7 @@ module RSpecTracer
     end
 
     def generate_examples_coverage_report
-      @cache.cached_examples_coverage.each_pair do |example_id, data|
+      @cache.cached_examples_coverage&.each_pair do |example_id, data|
         next if @reporter.examples_coverage.key?(example_id) ||
           @reporter.example_deleted?(example_id)
 
